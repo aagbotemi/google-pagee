@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { CgMenuGridO } from 'react-icons/cg';
-import Photo from "./assets/image/Abiodun.jpg"
 import GLogo from "./assets/image/google-logo.svg"
 import Search from './components/Search';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import axios from 'axios';
 
 const proxy = "https://mighty-island-53594.herokuapp.com";
@@ -43,14 +42,7 @@ function App() {
     <section>
       { (!result.length) ?
         <div className="h-screen flex flex-col">
-          <header className="flex justify-end items-center pt-4 pr-5">
-            <a className="text-sm hover:underline" href="/">Gmail</a>
-            <a className="text-sm mx-1 sm:mx-2 hover:underline" href="/">Image</a>
-            <a className="rounded-full p-1 mx-2 sm:mx-4 hover:bg-gray-100" href="/"><CgMenuGridO color="gray" size="28" /></a>
-            <a href="/">
-              <img src={Photo} alt="" className="w-8 h-8 rounded-full object-center" />
-            </a>
-          </header>
+          <Header />
           <main className="flex flex-col items-center mt-5">
             <img src={GLogo} alt="" className="w-64" />
             <Search query={query} handleInput={handleInput} handleSubmit={handleSubmit} />
