@@ -22,6 +22,11 @@ function App() {
     }
   };
 
+  // this function is used to display the data using dangerouslySetInnerHTML
+  const createMarkup = () => {
+    return {__html: result};
+  }
+
   //input the item you want to search
   const handleInput = (e) => {
     setQuery(e.target.value)
@@ -35,7 +40,8 @@ function App() {
 
   return (
     <section>
-      <div className="h-screen flex flex-col">
+      { (!result.length) ?
+        <div className="h-screen flex flex-col">
           <header className="flex justify-end items-center pt-4 pr-5">
             <a className="text-sm hover:underline" href="/">Gmail</a>
             <a className="text-sm mx-1 sm:mx-2 hover:underline" href="/">Image</a>
@@ -69,7 +75,9 @@ function App() {
             </div>
           </footer>
       
-        </div>
+        </div> :
+        (<div className="mt-12" dangerouslySetInnerHTML={createMarkup()} />)
+      }
     </section>
   );
 }
