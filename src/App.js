@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { CgMenuGridO } from 'react-icons/cg';
 import Photo from "./assets/image/Abiodun.jpg"
 import GLogo from "./assets/image/google-logo.svg"
-
+import Search from './components/Search';
+import axios from 'axios';
 
 function App() {
   const [query, setQuery] = useState("");
@@ -21,7 +22,7 @@ function App() {
           </header>
           <main className="flex flex-col items-center mt-5">
             <img src={GLogo} alt="" className="w-64" />
-            
+            <Search query={query}  />
             <div className="text-sm">
               <p>Google offered in: <a href="/" className="hover:underline text-blue-900">Hausa</a> <a href="/" className="hover:underline text-blue-900">Igbo</a> <a href="/" className="hover:underline text-blue-900">Èdè Yorùbá</a> <a href="/" className="hover:underline text-blue-900">Nigerian Pidgin</a></p>
             </div>
