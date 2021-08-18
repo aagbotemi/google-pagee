@@ -3,6 +3,7 @@ import { CgMenuGridO } from 'react-icons/cg';
 import Photo from "./assets/image/Abiodun.jpg"
 import GLogo from "./assets/image/google-logo.svg"
 import Search from './components/Search';
+import Footer from './components/Footer';
 import axios from 'axios';
 
 const proxy = "https://mighty-island-53594.herokuapp.com";
@@ -58,22 +59,7 @@ function App() {
             </div>
         
           </main>
-          <footer className="mt-auto">
-            <p className="bg-gray-200 px-5 py-3 border-b border-gray-400 opacity-80">Nigeria</p>
-            <div className="sm:flex justify-between bg-gray-200 px-5 py-3 opacity-70">
-              <div className="text-center sm:text-left">
-                <a className="hover:underline mr-4" href="/">Advertising</a>
-                <a className="hover:underline mr-4" href="/">Business</a>
-                <a className="hover:underline mr-4" href="/">About</a>
-                <a className="hover:underline" href="/">How Search Works</a>
-              </div>
-              <div className="text-center sm:text-left mt-1 sm:mt-0">
-                <a className="hover:underline" href="/">Privacy</a>
-                <a className="hover:underline ml-4" href="/">Terms</a>
-                <a className="hover:underline ml-4" href="/">Settings</a>
-              </div>
-            </div>
-          </footer>
+          <Footer />
       
         </div> :
         (<div className="mt-12" dangerouslySetInnerHTML={createMarkup()} />)
